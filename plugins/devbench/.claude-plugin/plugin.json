@@ -1,0 +1,31 @@
+{
+  "name": "devbench",
+  "version": "1.0.0",
+  "description": "AI-powered development tools. 27 agents, 20 commands, 13 skills, 2 MCP servers for code review, research, design, and workflow automation.",
+  "author": {
+    "name": "SiTaggart",
+    "url": "https://github.com/SiTaggart"
+  },
+  "homepage": "https://github.com/SiTaggart/claude-devbench",
+  "repository": "https://github.com/SiTaggart/claude-devbench",
+  "license": "MIT",
+  "keywords": [
+    "ai-powered",
+    "workflow-automation",
+    "code-review",
+    "react",
+    "typescript",
+    "python",
+    "knowledge-management",
+    "image-generation",
+    "playwright",
+    "browser-automation"
+  ],
+  "mcpServers": {
+    "repoprompt": {
+      "type": "stdio",
+      "command": "${HOME}/RepoPrompt/repoprompt_cli",
+      "args": []
+    }
+  }
+}

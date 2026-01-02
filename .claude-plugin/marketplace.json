@@ -1,0 +1,25 @@
+{
+  "name": "devbench-marketplace",
+  "owner": {
+    "name": "SiTaggart",
+    "url": "https://github.com/SiTaggart"
+  },
+  "metadata": {
+    "description": "Personal Claude Code plugin marketplace",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "devbench",
+      "description": "AI-powered development tools that get smarter with every use. Make each unit of engineering work easier than the last. Includes 27 specialized agents, 20 commands, and 13 skills.",
+      "version": "1.0.0",
+      "author": {
+        "name": "SiTaggart",
+        "url": "https://github.com/SiTaggart"
+      },
+      "homepage": "https://github.com/SiTaggart/claude-devbench",
+      "tags": ["ai-powered", "workflow-automation", "code-review", "quality", "knowledge-management", "react", "typescript"],
+      "source": "./plugins/devbench"
+    }
+  ]
+}
