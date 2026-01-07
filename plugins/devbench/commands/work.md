@@ -1,7 +1,7 @@
 ---
 name: workflows:work
 description: Execute work plans efficiently while maintaining quality and finishing features
-argument-hint: "[plan file, specification, or todo file path]"
+argument-hint: '[plan file, specification, or todo file path]'
 ---
 
 # Work Plan Execution Command
@@ -33,12 +33,14 @@ This command takes a work document (plan, specification, or todo file) and execu
    Choose your work style:
 
    **Option A: Live work on current branch**
+
    ```bash
    git checkout main && git pull origin main
    git checkout -b feature-branch-name
    ```
 
    **Option B: Parallel work with worktree (recommended for parallel development)**
+
    ```bash
    # Ask user first: "Work in parallel with worktree or on current branch?"
    # If worktree:
@@ -47,11 +49,13 @@ This command takes a work document (plan, specification, or todo file) and execu
    ```
 
    **Recommendation**: Use worktree if:
+
    - You want to work on multiple features simultaneously
    - You want to keep main clean while experimenting
    - You plan to switch between branches frequently
 
    Use live branch if:
+
    - You're working on a single feature
    - You prefer staying in the main repository
 
@@ -143,6 +147,7 @@ This command takes a work document (plan, specification, or todo file) and execu
    Present findings to user and address critical issues.
 
 3. **Final Validation**
+
    - All TodoWrite tasks marked completed
    - All tests pass
    - Linting passes
@@ -150,89 +155,8 @@ This command takes a work document (plan, specification, or todo file) and execu
    - Figma designs match (if applicable)
    - No console errors or warnings
 
-### Phase 4: Ship It
-
-1. **Create Commit**
-
-   ```bash
-   git add .
-   git status  # Review what's being committed
-   git diff --staged  # Check the changes
-
-   # Commit with conventional format
-   git commit -m "$(cat <<'EOF'
-   feat(scope): description of what and why
-
-   Brief explanation if needed.
-
-   🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-   Co-Authored-By: Claude <noreply@anthropic.com>
-   EOF
-   )"
-   ```
-
-2. **Capture and Upload Screenshots for UI Changes** (REQUIRED for any UI work)
-
-   For **any** design changes, new views, or UI modifications, you MUST capture and upload screenshots:
-
-   **Step 1: Start dev server** (if not running)
-   ```bash
-   bin/dev  # Run in background
-   ```
-
-   **Step 2: Capture screenshots with Playwright MCP tools**
-   - `browser_navigate` to go to affected pages
-   - `browser_resize` to set viewport (desktop or mobile as needed)
-   - `browser_snapshot` to verify page state
-   - `browser_take_screenshot` to capture images
-
-   **Step 3: Upload using imgup skill**
-   ```bash
-   skill: imgup
-   # Then upload each screenshot:
-   imgup -h pixhost screenshot.png  # pixhost works without API key
-   # Alternative hosts: catbox, imagebin, beeimg
-   ```
-
-   **What to capture:**
-   - **New screens**: Screenshot of the new UI
-   - **Modified screens**: Before AND after screenshots
-   - **Design implementation**: Screenshot showing Figma design match
-
-   **IMPORTANT**: Always include uploaded image URLs in PR description. This provides visual context for reviewers and documents the change.
-
-3. **Create Pull Request**
-
-   ```bash
-   git push -u origin feature-branch-name
-
-   gh pr create --title "Feature: [Description]" --body "$(cat <<'EOF'
-   ## Summary
-   - What was built
-   - Why it was needed
-   - Key decisions made
-
-   ## Testing
-   - Tests added/modified
-   - Manual testing performed
-
-   ## Before / After Screenshots
-   | Before | After |
-   |--------|-------|
-   | ![before](URL) | ![after](URL) |
-
-   ## Figma Design
-   [Link if applicable]
-
-   🤖 Generated with [Claude Code](https://claude.com/claude-code)
-   EOF
-   )"
-   ```
-
 4. **Notify User**
    - Summarize what was completed
-   - Link to PR
    - Note any follow-up work needed
    - Suggest next steps if applicable
 
