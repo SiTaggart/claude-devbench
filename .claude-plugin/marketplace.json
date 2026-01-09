@@ -6,13 +6,13 @@
   },
   "metadata": {
     "description": "Personal Claude Code plugin marketplace",
-    "version": "1.0.1"
+    "version": "1.0.2"
   },
   "plugins": [
     {
       "name": "devbench",
       "description": "AI-powered development tools that get smarter with every use. Make each unit of engineering work easier than the last. Includes 27 specialized agents, 20 commands, and 13 skills.",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "author": {
         "name": "SiTaggart",
         "url": "https://github.com/SiTaggart"
