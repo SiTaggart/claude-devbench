@@ -192,7 +192,6 @@ Work logs serve as:
 3. Rename file: `mv {file}-ready-{pri}-{desc}.md {file}-complete-{pri}-{desc}.md`
 4. Update frontmatter: `status: ready` → `status: complete`
 5. Check for unblocked work: `grep -l 'dependencies:.*"002"' .ai/todos/*-ready-*.md`
-6. Commit with issue reference: `feat: resolve issue 002`
 
 ## Integration with Development Workflows
 

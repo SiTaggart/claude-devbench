@@ -1,7 +1,7 @@
 ---
 name: resolve_todo_parallel
 description: Resolve all pending CLI todos using parallel processing
-argument-hint: "[optional: specific todo ID or pattern]"
+argument-hint: '[optional: specific todo ID or pattern]'
 ---
 
 Resolve all TODO comments using parallel processing.
@@ -27,9 +27,3 @@ So if there are 3 comments, it will spawn 3 pr-comment-resolver agents in parall
 3. Task pr-comment-resolver(comment3)
 
 Always run all in parallel subagents/Tasks for each Todo item.
-
-### 4. Commit & Resolve
-
-- Commit changes
-- Remove the TODO from the file, and mark it as resolved.
-- Push to remote

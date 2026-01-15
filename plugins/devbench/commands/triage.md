@@ -1,7 +1,7 @@
 ---
 name: triage
 description: Triage and categorize findings for the CLI todo system
-argument-hint: "[findings list or source type]"
+argument-hint: '[findings list or source type]'
 ---
 
 - First set the /model to Haiku
@@ -84,7 +84,7 @@ Do you want to add this to the todo list?
    ---
    status: ready # IMPORTANT: Change from "pending" to "ready"
    priority: p1 # or p2, p3 based on severity
-   issue_id: "042"
+   issue_id: '042'
    tags: [category, relevant-tags]
    dependencies: []
    ---
@@ -305,6 +305,5 @@ When done give these options
 What would you like to do next?
 
 1. run /resolve_todo_parallel to resolve the todos
-2. commit the todos
-3. nothing, go chill
+2. nothing, go chill
 ```

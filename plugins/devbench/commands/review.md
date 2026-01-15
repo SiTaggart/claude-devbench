@@ -374,7 +374,6 @@ After creating all todo files, present comprehensive summary:
 4. **Track Progress**:
    - Rename file when status changes: pending → ready → complete
    - Update Work Log as you work
-   - Commit todos: `git add todos/ && git commit -m "refactor: add code review findings"`
 
 ### Severity Breakdown:
 
@@ -426,26 +425,6 @@ After presenting the Summary Report, offer appropriate testing based on project 
 2. No - skip
 ````
 
-**For iOS Projects:**
-
-```markdown
-**"Want to run Xcode simulator tests on the app?"**
-
-1. Yes - run `/xcode-test`
-2. No - skip
-```
-
-**For Hybrid Projects (e.g., Rails + Hotwire Native):**
-
-```markdown
-**"Want to run end-to-end tests?"**
-
-1. Web only - run `/playwright-test`
-2. iOS only - run `/xcode-test`
-3. Both - run both commands
-4. No - skip
-```
-
 </offer_testing>
 
 #### If User Accepts Web Testing:
@@ -468,32 +447,6 @@ The subagent will:
 
 **Standalone:** `/playwright-test [PR number]`
 
-#### If User Accepts iOS Testing:
-
-Spawn a subagent to run Xcode tests (preserves main context):
-
-```
-Task general-purpose("Run /xcode-test for scheme [name]. Build for simulator, install, launch, take screenshots, check for crashes.")
-```
-
-The subagent will:
-
-1. Verify XcodeBuildMCP is installed
-2. Discover project and schemes
-3. Build for iOS Simulator
-4. Install and launch app
-5. Take screenshots of key screens
-6. Capture console logs for errors
-7. Pause for human verification (Sign in with Apple, push, IAP)
-8. Create P1 todos for any failures
-9. Fix and retry until all tests pass
-
-**Standalone:** `/xcode-test [scheme]`
-
 ### Important: P1 Findings Block Merge
 
 Any **🔴 P1 (CRITICAL)** findings must be addressed before merging the PR. Present these prominently and ensure they're resolved before accepting the PR.
-
-```
-
-```
