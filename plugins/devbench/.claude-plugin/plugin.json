@@ -1,7 +1,7 @@
 {
   "name": "devbench",
-  "version": "1.0.2",
-  "description": "AI-powered development tools. 27 agents, 20 commands, 13 skills, 2 MCP servers for code review, research, design, and workflow automation.",
+  "version": "1.1.0",
+  "description": "AI-powered development tools. 25 agents, 21 commands, 17 skills, 1 MCP server for code review, research, design, and workflow automation.",
   "author": {
     "name": "SiTaggart",
     "url": "https://github.com/SiTaggart"

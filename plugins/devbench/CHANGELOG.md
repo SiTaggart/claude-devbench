@@ -5,6 +5,28 @@ All notable changes to the devbench plugin will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-01-15
+
+### Added
+
+- **RepoPrompt Integration Commands** - 4 new CLI commands for RepoPrompt workflows:
+  - `/rp-build-cli` - Build workflow with context builder
+  - `/rp-investigate-cli` - Deep bug investigation
+  - `/rp-oracle-export-cli` - Export to oracle format
+  - `/rp-reminder-cli` - Context reminders
+- **Agent Browser Skill** - New skill for browser automation in agent workflows
+
+### Removed
+
+- `dhh-rails-reviewer` agent - Rails-specific tooling removed for framework-agnostic focus
+- `dhh-rails-style` skill - Rails-specific tooling removed
+- `dhh-ruby-style` skill - Ruby-specific tooling removed
+
+### Changed
+
+- Streamlined `compound-docs`, `review`, and `plan_review` commands
+- Plugin is now more framework-agnostic (removed 3,669 lines of Rails/Ruby-specific code)
+
 ## [1.0.2] - 2026-01-09
 
 ### Changed
