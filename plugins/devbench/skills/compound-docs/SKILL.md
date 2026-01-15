@@ -19,7 +19,7 @@ preconditions:
 
 This skill captures problem solutions immediately after confirmation, creating structured documentation that serves as a searchable knowledge base for future sessions.
 
-**Organization:** Single-file architecture - each problem documented as one markdown file in its symptom category directory (e.g., `docs/solutions/performance-issues/n-plus-one-briefs.md`). Files use YAML frontmatter for metadata and searchability.
+**Organization:** Single-file architecture - each problem documented as one markdown file in its symptom category directory (e.g., `.ai/docs/solutions/performance-issues/n-plus-one-briefs.md`). Files use YAML frontmatter for metadata and searchability.
 
 ---
 
@@ -52,7 +52,7 @@ This skill captures problem solutions immediately after confirmation, creating s
 - Simple typos
 - Obvious syntax errors
 - Trivial fixes immediately corrected
-</step>
+  </step>
 
 <step number="2" required="true" depends_on="1">
 ### Step 2: Gather Context
@@ -86,19 +86,19 @@ I need a few details to document this properly:
 
 [Continue after user provides details]
 ```
+
 </step>
 
 <step number="3" required="false" depends_on="2">
 ### Step 3: Check Existing Docs
 
-Search docs/solutions/ for similar issues:
+Search .ai/docs/solutions/ for similar issues:
 
 ```bash
 # Search by error message keywords
-grep -r "exact error phrase" docs/solutions/
-
+grep -r "exact error phrase" .ai/docs/solutions/
 # Search by symptom category
-ls docs/solutions/[category]/
+ls .ai/docs/solutions/[category]/
 ```
 
 **IF similar issue found:**
@@ -106,7 +106,7 @@ ls docs/solutions/[category]/
 THEN present decision options:
 
 ```
-Found similar issue: docs/solutions/[path]
+Found similar issue: .ai/docs/solutions/[path]
 
 What's next?
 1. Create new doc with cross-reference (recommended)
@@ -140,7 +140,7 @@ Format: `[sanitized-symptom]-[module]-[YYYYMMDD].md`
 - `missing-include-BriefSystem-20251110.md`
 - `parameter-not-saving-state-EmailProcessing-20251110.md`
 - `webview-crash-on-resize-Assistant-20251110.md`
-</step>
+  </step>
 
 <step number="5" required="true" depends_on="4" blocking="true">
 ### Step 5: Validate YAML Schema
@@ -181,16 +181,17 @@ Please provide corrected values.
 PROBLEM_TYPE="[from validated YAML]"
 CATEGORY="[mapped from problem_type]"
 FILENAME="[generated-filename].md"
-DOC_PATH="docs/solutions/${CATEGORY}/${FILENAME}"
+DOC_PATH=".ai/docs/solutions/${CATEGORY}/${FILENAME}"
 
 # Create directory if needed
-mkdir -p "docs/solutions/${CATEGORY}"
+mkdir -p ".ai/docs/solutions/${CATEGORY}"
 
 # Write documentation using template from assets/resolution-template.md
 # (Content populated with Step 2 context and validated YAML frontmatter)
 ```
 
 **Result:**
+
 - Single file in category directory
 - Enum validation ensures consistent categorization
 
@@ -217,8 +218,8 @@ Already includes cross-reference from Step 6.
 If this represents a common pattern (3+ similar issues):
 
 ```bash
-# Add to docs/solutions/patterns/common-solutions.md
-cat >> docs/solutions/patterns/common-solutions.md << 'EOF'
+# Add to .ai/docs/solutions/patterns/common-solutions.md
+cat >> .ai/docs/solutions/patterns/common-solutions.md << 'EOF'
 
 ## [Pattern Name]
 
@@ -236,11 +237,13 @@ EOF
 **Critical Pattern Detection (Optional Proactive Suggestion):**
 
 If this issue has automatic indicators suggesting it might be critical:
+
 - Severity: `critical` in YAML
 - Affects multiple modules OR foundational stage (Stage 2 or 3)
 - Non-obvious solution
 
 Then in the decision menu (Step 8), add a note:
+
 ```
 💡 This might be worth adding to Required Reading (Option 2)
 ```
@@ -249,7 +252,7 @@ But **NEVER auto-promote**. User decides via decision menu (Option 2).
 
 **Template for critical pattern addition:**
 
-When user selects Option 2 (Add to Required Reading), use the template from `assets/critical-pattern-template.md` to structure the pattern entry. Number it sequentially based on existing patterns in `docs/solutions/patterns/cora-critical-patterns.md`.
+When user selects Option 2 (Add to Required Reading), use the template from `assets/critical-pattern-template.md` to structure the pattern entry. Number it sequentially based on existing patterns in `.ai/docs/solutions/patterns/[project]-critical-patterns.md`.
 </step>
 
 </critical_sequence>
@@ -266,11 +269,11 @@ After successful documentation, present options and WAIT for user response:
 ✓ Solution documented
 
 File created:
-- docs/solutions/[category]/[filename].md
+- .ai/docs/solutions/[category]/[filename].md
 
 What's next?
 1. Continue workflow (recommended)
-2. Add to Required Reading - Promote to critical patterns (cora-critical-patterns.md)
+2. Add to Required Reading - Promote to critical patterns ([project]-critical-patterns.md)
 3. Link related issues - Connect to similar problems
 4. Add to existing skill - Add to a learning skill (e.g., hotwire-native)
 5. Create new skill - Extract into new learning skill
@@ -288,21 +291,23 @@ What's next?
 **Option 2: Add to Required Reading** ⭐ PRIMARY PATH FOR CRITICAL PATTERNS
 
 User selects this when:
+
 - System made this mistake multiple times across different modules
 - Solution is non-obvious but must be followed every time
 - Foundational requirement (Rails, Rails API, threading, etc.)
 
 Action:
+
 1. Extract pattern from the documentation
 2. Format as ❌ WRONG vs ✅ CORRECT with code examples
-3. Add to `docs/solutions/patterns/cora-critical-patterns.md`
+3. Add to `.ai/docs/solutions/patterns/[project]-critical-patterns.md`
 4. Add cross-reference back to this doc
 5. Confirm: "✓ Added to Required Reading. All subagents will see this pattern before code generation."
 
 **Option 3: Link related issues**
 
 - Prompt: "Which doc to link? (provide filename or describe)"
-- Search docs/solutions/ for the doc
+- Search .ai/docs/solutions/ for the doc
 - Add cross-reference to both docs
 - Confirm: "✓ Cross-reference added"
 
@@ -311,12 +316,14 @@ Action:
 User selects this when the documented solution relates to an existing learning skill:
 
 Action:
+
 1. Prompt: "Which skill? (hotwire-native, etc.)"
 2. Determine which reference file to update (resources.md, patterns.md, or examples.md)
 3. Add link and brief description to appropriate section
 4. Confirm: "✓ Added to [skill-name] skill in [file]"
 
 Example: For Hotwire Native Tailwind variants solution:
+
 - Add to `hotwire-native/references/resources.md` under "CORA-Specific Resources"
 - Add to `hotwire-native/references/examples.md` with link to solution doc
 
@@ -325,6 +332,7 @@ Example: For Hotwire Native Tailwind variants solution:
 User selects this when the solution represents the start of a new learning domain:
 
 Action:
+
 1. Prompt: "What should the new skill be called? (e.g., stripe-billing, email-processing)"
 2. Run `python3 .claude/skills/skill-creator/scripts/init_skill.py [skill-name]`
 3. Create initial reference files with this solution as first example
@@ -348,11 +356,13 @@ Action:
 ## Integration Points
 
 **Invoked by:**
+
 - /compound command (primary interface)
 - Manual invocation in conversation after solution confirmed
 - Can be triggered by detecting confirmation phrases like "that worked", "it's fixed", etc.
 
 **Invokes:**
+
 - None (terminal skill - does not delegate to other skills)
 
 **Handoff expectations:**
@@ -369,7 +379,7 @@ All context needed for documentation should be present in conversation history b
 Documentation is successful when ALL of the following are true:
 
 - ✅ YAML frontmatter validated (all required fields, correct formats)
-- ✅ File created in docs/solutions/[category]/[filename].md
+- ✅ File created in .ai/docs/solutions/[category]/[filename].md
 - ✅ Enum values match schema.yaml exactly
 - ✅ Code examples included in solution section
 - ✅ Cross-references added if related issues found
@@ -408,6 +418,7 @@ Documentation is successful when ALL of the following are true:
 ## Execution Guidelines
 
 **MUST do:**
+
 - Validate YAML frontmatter (BLOCK if invalid per Step 5 validation gate)
 - Extract exact error messages from conversation
 - Include code examples in solution section
@@ -415,6 +426,7 @@ Documentation is successful when ALL of the following are true:
 - Ask user and WAIT if critical context missing
 
 **MUST NOT do:**
+
 - Skip YAML validation (validation gate is blocking)
 - Use vague descriptions (not searchable)
 - Omit code examples or cross-references
@@ -467,15 +479,15 @@ Documentation is successful when ALL of the following are true:
    problem_type: performance_issue
    component: rails_model
    symptoms:
-     - "N+1 query when loading email threads"
-     - "Brief generation taking >5 seconds"
+     - 'N+1 query when loading email threads'
+     - 'Brief generation taking >5 seconds'
    root_cause: missing_include
    severity: high
    tags: [n-plus-one, eager-loading, performance]
    ```
    ✅ Valid
 6. **Create documentation:**
-   - `docs/solutions/performance-issues/n-plus-one-brief-generation-BriefSystem-20251110.md`
+   - `.ai/docs/solutions/performance-issues/n-plus-one-brief-generation-BriefSystem-20251110.md`
 7. **Cross-reference:** None needed (no similar issues)
 
 **Output:**
@@ -484,11 +496,11 @@ Documentation is successful when ALL of the following are true:
 ✓ Solution documented
 
 File created:
-- docs/solutions/performance-issues/n-plus-one-brief-generation-BriefSystem-20251110.md
+- .ai/docs/solutions/performance-issues/n-plus-one-brief-generation-BriefSystem-20251110.md
 
 What's next?
 1. Continue workflow (recommended)
-2. Add to Required Reading - Promote to critical patterns (cora-critical-patterns.md)
+2. Add to Required Reading - Promote to critical patterns ([project]-critical-patterns.md)
 3. Link related issues - Connect to similar problems
 4. Add to existing skill - Add to a learning skill (e.g., hotwire-native)
 5. Create new skill - Extract into new learning skill

@@ -1,17 +1,19 @@
 # Critical Pattern Template
 
-Use this template when adding a pattern to `docs/solutions/patterns/cora-critical-patterns.md`:
+Use this template when adding a pattern to `.ai/docs/solutions/patterns/[project]-critical-patterns.md`:
 
 ---
 
 ## N. [Pattern Name] (ALWAYS REQUIRED)
 
 ### ❌ WRONG ([Will cause X error])
+
 ```[language]
 [code showing wrong approach]
 ```
 
 ### ✅ CORRECT
+
 ```[language]
 [code showing correct approach]
 ```
@@ -20,11 +22,12 @@ Use this template when adding a pattern to `docs/solutions/patterns/cora-critica
 
 **Placement/Context:** [When this applies]
 
-**Documented in:** `docs/solutions/[category]/[filename].md`
+**Documented in:** `.ai/docs/solutions/[category]/[filename].md`
 
 ---
 
 **Instructions:**
+
 1. Replace N with the next pattern number
 2. Replace [Pattern Name] with descriptive title
 3. Fill in WRONG example with code that causes the problem

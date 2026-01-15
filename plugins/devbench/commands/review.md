@@ -1,7 +1,7 @@
 ---
 name: workflows:review
 description: Perform exhaustive code reviews using multi-agent analysis, ultra-thinking, and worktrees
-argument-hint: "[PR number, GitHub URL, branch name, or latest]"
+argument-hint: '[PR number, GitHub URL, branch name, or latest]'
 ---
 
 # Review Command
@@ -54,9 +54,9 @@ Ensure that the code is ready for analysis (either in worktree or on current bra
 
 Run ALL or most of these agents at the same time:
 
-1. Task kieran-rails-reviewer(PR content)
-2. Task dhh-rails-reviewer(PR title)
-3. If turbo is used: Task rails-turbo-expert(PR content)
+1. Task kieran-typescript-reviewer(PR content)
+2. Task kieran-python-reviewer(PR content)
+3. Task code-simplicity-reviewer(PR content)
 4. Task git-history-analyzer(PR content)
 5. Task dependency-detective(PR content)
 6. Task pattern-recognition-specialist(PR content)
@@ -69,30 +69,6 @@ Run ALL or most of these agents at the same time:
 13. Task agent-native-reviewer(PR content) - Verify new features are agent-accessible
 
 </parallel_tasks>
-
-#### Conditional Agents (Run if applicable):
-
-<conditional_agents>
-
-These agents are run ONLY when the PR matches specific criteria. Check the PR files list to determine if they apply:
-
-**If PR contains database migrations (db/migrate/*.rb files) or data backfills:**
-
-14. Task data-migration-expert(PR content) - Validates ID mappings match production, checks for swapped values, verifies rollback safety
-15. Task deployment-verification-agent(PR content) - Creates Go/No-Go deployment checklist with SQL verification queries
-
-**When to run migration agents:**
-- PR includes files matching `db/migrate/*.rb`
-- PR modifies columns that store IDs, enums, or mappings
-- PR includes data backfill scripts or rake tasks
-- PR changes how data is read/written (e.g., changing from FK to string column)
-- PR title/body mentions: migration, backfill, data transformation, ID mapping
-
-**What these agents check:**
-- `data-migration-expert`: Verifies hard-coded mappings match production reality (prevents swapped IDs), checks for orphaned associations, validates dual-write patterns
-- `deployment-verification-agent`: Produces executable pre/post-deploy checklists with SQL queries, rollback procedures, and monitoring plans
-
-</conditional_agents>
 
 ### 4. Ultra-Thinking Deep Dive Phases
 
@@ -423,7 +399,7 @@ After creating all todo files, present comprehensive summary:
 - Optimization opportunities
 - Documentation updates
 
-```
+````
 
 ### 7. End-to-End Testing (Optional)
 
@@ -448,18 +424,22 @@ After presenting the Summary Report, offer appropriate testing based on project 
 **"Want to run Playwright browser tests on the affected pages?"**
 1. Yes - run `/playwright-test`
 2. No - skip
-```
+````
 
 **For iOS Projects:**
+
 ```markdown
 **"Want to run Xcode simulator tests on the app?"**
+
 1. Yes - run `/xcode-test`
 2. No - skip
 ```
 
 **For Hybrid Projects (e.g., Rails + Hotwire Native):**
+
 ```markdown
 **"Want to run end-to-end tests?"**
+
 1. Web only - run `/playwright-test`
 2. iOS only - run `/xcode-test`
 3. Both - run both commands
@@ -477,6 +457,7 @@ Task general-purpose("Run /playwright-test for PR #[number]. Test all affected p
 ```
 
 The subagent will:
+
 1. Identify pages affected by the PR
 2. Navigate to each page and capture snapshots
 3. Check for console errors
@@ -496,6 +477,7 @@ Task general-purpose("Run /xcode-test for scheme [name]. Build for simulator, in
 ```
 
 The subagent will:
+
 1. Verify XcodeBuildMCP is installed
 2. Discover project and schemes
 3. Build for iOS Simulator
@@ -511,4 +493,7 @@ The subagent will:
 ### Important: P1 Findings Block Merge
 
 Any **🔴 P1 (CRITICAL)** findings must be addressed before merging the PR. Present these prominently and ensure they're resolved before accepting the PR.
+
+```
+
 ```

@@ -36,8 +36,8 @@ date: 2025-11-12
 problem_type: performance_issue
 component: rails_model
 symptoms:
-  - "N+1 query when loading email threads"
-  - "Brief generation taking >5 seconds"
+  - 'N+1 query when loading email threads'
+  - 'Brief generation taking >5 seconds'
 root_cause: missing_include
 rails_version: 7.1.2
 resolution_type: code_fix
@@ -50,16 +50,16 @@ tags: [n-plus-one, eager-loading, performance]
 
 Based on `problem_type`, documentation is filed in:
 
-- **build_error** → `docs/solutions/build-errors/`
-- **test_failure** → `docs/solutions/test-failures/`
-- **runtime_error** → `docs/solutions/runtime-errors/`
-- **performance_issue** → `docs/solutions/performance-issues/`
-- **database_issue** → `docs/solutions/database-issues/`
-- **security_issue** → `docs/solutions/security-issues/`
-- **ui_bug** → `docs/solutions/ui-bugs/`
-- **integration_issue** → `docs/solutions/integration-issues/`
-- **logic_error** → `docs/solutions/logic-errors/`
-- **developer_experience** → `docs/solutions/developer-experience/`
-- **workflow_issue** → `docs/solutions/workflow-issues/`
-- **best_practice** → `docs/solutions/best-practices/`
-- **documentation_gap** → `docs/solutions/documentation-gaps/`
+- **build_error** → `.ai/docs/solutions/build-errors/`
+- **test_failure** → `.ai/docs/solutions/test-failures/`
+- **runtime_error** → `.ai/docs/solutions/runtime-errors/`
+- **performance_issue** → `.ai/docs/solutions/performance-issues/`
+- **database_issue** → `.ai/docs/solutions/database-issues/`
+- **security_issue** → `.ai/docs/solutions/security-issues/`
+- **ui_bug** → `.ai/docs/solutions/ui-bugs/`
+- **integration_issue** → `.ai/docs/solutions/integration-issues/`
+- **logic_error** → `.ai/docs/solutions/logic-errors/`
+- **developer_experience** → `.ai/docs/solutions/developer-experience/`
+- **workflow_issue** → `.ai/docs/solutions/workflow-issues/`
+- **best_practice** → `.ai/docs/solutions/best-practices/`
+- **documentation_gap** → `.ai/docs/solutions/documentation-gaps/`

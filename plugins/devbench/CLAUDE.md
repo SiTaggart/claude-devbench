@@ -45,6 +45,7 @@ skills/
 ## Command Naming Convention
 
 **Workflow commands** use `workflows:` prefix to avoid collisions with built-in commands:
+
 - `/workflows:plan` - Create implementation plans
 - `/workflows:review` - Run comprehensive code reviews
 - `/workflows:work` - Execute work items systematically
@@ -84,7 +85,3 @@ grep -E '`(references|assets|scripts)/[^`]+`' skills/*/SKILL.md
 grep -E '^description:' skills/*/SKILL.md | grep -v 'This skill'
 # Should return nothing if all use third person
 ```
-
-## Documentation
-
-See `docs/solutions/plugin-versioning-requirements.md` for detailed versioning workflow.

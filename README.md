@@ -5,6 +5,7 @@ Personal Claude Code plugin marketplace featuring the Devbench plugin - AI-power
 ## Quick Start
 
 ### Standard Installation
+
 Run Claude and add the marketplace:
 
 ```bash
@@ -18,6 +19,7 @@ Then install the plugin:
 ```
 
 ### One-Command Installation
+
 Use the [Claude Plugins CLI](https://claude-plugins.dev) to skip the marketplace setup:
 
 ```bash
@@ -41,6 +43,7 @@ Based on the Compounding Engineering Philosophy, adapted for React/TypeScript de
 Traditional development accumulates technical debt. Every feature adds complexity. Every change increases maintenance burden. The codebase becomes harder to work with over time.
 
 Compounding engineering inverts this. Each feature you build:
+
 - Documents patterns for the next feature
 - Creates reusable components that accelerate future work
 - Establishes conventions that reduce decision fatigue
@@ -70,6 +73,7 @@ The plugin follows a three-step workflow that makes development compound:
 Use `/compound-engineering:plan` to transform feature descriptions into comprehensive GitHub issues.
 
 **What it does:**
+
 - Researches your codebase to find similar patterns and conventions
 - Analyzes framework documentation and best practices
 - Creates detailed acceptance criteria and implementation plans
@@ -82,6 +86,7 @@ Use `/compound-engineering:plan` to transform feature descriptions into comprehe
 Use `/compound-engineering:work` to execute work plans with isolated worktrees and systematic task tracking.
 
 **What it does:**
+
 - Creates isolated git worktrees for clean development
 - Breaks down plans into trackable todos
 - Executes tasks systematically with continuous validation
@@ -94,6 +99,7 @@ Use `/compound-engineering:work` to execute work plans with isolated worktrees a
 Use `/compound-engineering:review` to perform exhaustive multi-agent code reviews.
 
 **What it does:**
+
 - Checks out your PR in an isolated worktree for deep analysis
 - Runs 12+ specialized review agents in parallel
 - Identifies security issues, performance problems, and architectural concerns
@@ -111,12 +117,14 @@ claude /compound-engineering:plan "Add user profile avatars with S3 upload and a
 ```
 
 The command will:
+
 1. Research how your codebase handles file uploads
 2. Find similar features in your repository
 3. Check framework documentation for best practices
 4. Generate a complete issue with acceptance criteria, technical approach, and code examples
 
 You can choose detail levels:
+
 - **Minimal:** Quick issues for simple features
 - **More:** Standard issues with technical considerations
 - **A lot:** Comprehensive issues for major features
@@ -129,6 +137,7 @@ claude /compound-engineering:work path/to/plan.md
 ```
 
 The command will:
+
 1. Create a feature branch and isolated worktree
 2. Analyze the plan and create a comprehensive todo list
 3. Execute each task systematically
@@ -149,6 +158,7 @@ claude /compound-engineering:review https://github.com/user/repo/pull/123
 ```
 
 The command will:
+
 1. Check out the PR in an isolated worktree
 2. Run 12+ specialized review agents in parallel:
    - Language-specific reviewers (Rails, TypeScript, Python)
@@ -164,21 +174,27 @@ The command will:
 The plugin includes six commands for different stages of development:
 
 ### `/compound-engineering:plan [feature description]`
+
 Creates detailed GitHub issues from feature descriptions. Includes research, acceptance criteria, and implementation guidance.
 
 ### `/compound-engineering:work [plan file]`
+
 Executes work plans systematically with worktrees, todos, and continuous validation.
 
 ### `/compound-engineering:review [PR number or URL]`
+
 Performs exhaustive multi-agent code reviews with security, performance, and architecture analysis.
 
 ### `/compound-engineering:triage`
+
 Presents findings one by one for review and converts approved items into trackable todos.
 
 ### `/compound-engineering:resolve_todo_parallel`
+
 Resolves multiple todos in parallel with systematic execution and quality checks.
 
 ### `/compound-engineering:generate_command`
+
 Generates new Claude Code commands from descriptions.
 
 ## All Agents
@@ -186,28 +202,32 @@ Generates new Claude Code commands from descriptions.
 The plugin includes 17 specialized agents that provide expertise in different areas:
 
 ### Code Review Specialists
+
 - **kieran-rails-reviewer:** Strict Rails code review with focus on conventions and simplicity
 - **kieran-typescript-reviewer:** TypeScript code review with type safety and best practices
 - **kieran-python-reviewer:** Python code review with focus on clarity and conventions
-- **dhh-rails-reviewer:** Rails review from DHH's philosophy of simplicity
 - **code-simplicity-reviewer:** Identifies opportunities to simplify complex code
 
 ### Quality Guardians
+
 - **security-sentinel:** Comprehensive security audits and vulnerability detection
 - **performance-oracle:** Performance analysis and optimization recommendations
 - **data-integrity-guardian:** Database design review and data consistency checks
 
 ### Architecture & Patterns
+
 - **architecture-strategist:** System design review and architectural guidance
 - **pattern-recognition-specialist:** Identifies patterns and suggests improvements
 
 ### Research & Analysis
+
 - **repo-research-analyst:** Analyzes repository patterns and conventions
 - **best-practices-researcher:** Researches best practices for technologies
 - **framework-docs-researcher:** Fetches relevant framework documentation
 - **git-history-analyzer:** Analyzes git history for context and patterns
 
 ### Workflow & Communication
+
 - **every-style-editor:** Edits content to match Every's style guide
 - **feedback-codifier:** Converts feedback into actionable improvements
 - **pr-comment-resolver:** Systematically resolves PR review comments
@@ -217,16 +237,19 @@ The plugin includes 17 specialized agents that provide expertise in different ar
 Traditional development tools help you work faster. Compounding engineering tools make future work easier.
 
 **Every `/compound-engineering:plan` you create:**
+
 - Documents patterns that inform the next plan
 - Establishes conventions that reduce planning time
 - Builds institutional knowledge
 
 **Every `/compound-engineering:work` execution:**
+
 - Creates reusable components
 - Refines your testing approach
 - Improves your development process
 
 **Every `/compound-engineering:review` you run:**
+
 - Catches issues earlier
 - Documents learnings for the team
 - Raises the quality bar systematically

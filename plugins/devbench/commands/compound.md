@@ -128,7 +128,7 @@ Primary Subagent Results:
   ✓ Solution Extractor: Extracted 3 code fixes
   ✓ Related Docs Finder: Found 2 related issues
   ✓ Prevention Strategist: Generated test cases
-  ✓ Category Classifier: docs/solutions/performance-issues/
+  ✓ Category Classifier: .ai/docs/solutions/performance-issues/
   ✓ Documentation Writer: Created complete markdown
 
 Specialized Agent Reviews (Auto-Triggered):
@@ -138,7 +138,7 @@ Specialized Agent Reviews (Auto-Triggered):
   ✓ every-style-editor: Documentation style verified
 
 File created:
-- docs/solutions/performance-issues/n-plus-one-brief-generation.md
+- .ai/docs/solutions/performance-issues/n-plus-one-brief-generation.md
 
 This documentation will be searchable for future reference when similar
 issues occur in the Email Processing or Brief System modules.
@@ -156,7 +156,7 @@ What's next?
 This creates a compounding knowledge system:
 
 1. First time you solve "N+1 query in brief generation" → Research (30 min)
-2. Document the solution → docs/solutions/performance-issues/n-plus-one-briefs.md (5 min)
+2. Document the solution → .ai/docs/solutions/performance-issues/n-plus-one-briefs.md (5 min)
 3. Next time similar issue occurs → Quick lookup (2 min)
 4. Knowledge compounds → Team gets smarter
 
@@ -210,5 +210,5 @@ Based on problem type, these agents can enhance documentation:
 
 ## Related Commands
 
-- `/research [topic]` - Deep investigation (searches docs/solutions/ for patterns)
+- `/research [topic]` - Deep investigation (searches .ai/docs/solutions/ for patterns)
 - `/workflows:plan` - Planning workflow (references documented solutions)
