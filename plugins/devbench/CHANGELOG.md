@@ -5,6 +5,12 @@ All notable changes to the devbench plugin will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] - 2026-01-21
+
+### Added
+
+- **skills-sh-marketplace skill** - Search, discover, and install skills from [skills.sh](https://skills.sh) (Vercel's open agent skills ecosystem). Supports browsing the leaderboard, filtering by name/author, listing repository contents, and installing skills to Claude Code and other agents using `bunx skills` commands.
+
 ## [1.1.1] - 2026-01-15
 
 ### Changed

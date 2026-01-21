@@ -6,10 +6,10 @@ AI-powered development tools that get smarter with every use. Make each unit of 
 
 | Component   | Count |
 | ----------- | ----- |
-| Agents      | 27    |
-| Commands    | 20    |
-| Skills      | 13    |
-| MCP Servers | 2     |
+| Agents      | 25    |
+| Commands    | 21    |
+| Skills      | 18    |
+| MCP Servers | 1     |
 
 ## Agents
 
@@ -105,32 +105,48 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 | Skill                       | Description                                      |
 | --------------------------- | ------------------------------------------------ |
 | `agent-native-architecture` | Build AI agents using prompt-native architecture |
+| `frontend-design`           | Create production-grade frontend interfaces      |
 
 ### Development Tools
 
-| Skill                    | Description                                          |
-| ------------------------ | ---------------------------------------------------- |
-| `andrew-kane-gem-writer` | Write Ruby gems following Andrew Kane's patterns     |
-| `compound-docs`          | Capture solved problems as categorized documentation |
-| `create-agent-skills`    | Expert guidance for creating Claude Code skills      |
-| `dhh-ruby-style`         | Write Ruby/Rails code in DHH's 37signals style       |
-| `dspy-ruby`              | Build type-safe LLM applications with DSPy.rb        |
-| `frontend-design`        | Create production-grade frontend interfaces          |
-| `skill-creator`          | Guide for creating effective Claude Code skills      |
+| Skill                      | Description                                        |
+| -------------------------- | -------------------------------------------------- |
+| `create-agent-skills`      | Expert guidance for creating Claude Code skills    |
+| `skill-creator`            | Guide for creating effective Claude Code skills    |
+| `test-driven-development`  | Test-driven development workflows                  |
+| `typescript-advanced-types`| Master TypeScript's advanced type system           |
+| `github-search`            | Search GitHub code, repos, issues, and PRs via CLI |
+| `repo-research-analyst`    | Analyze repository structure and patterns          |
 
-### Content & Workflow
+### Workflow & Git
 
-| Skill                | Description                                    |
-| -------------------- | ---------------------------------------------- |
-| `every-style-editor` | Review copy for Every's style guide compliance |
-| `file-todos`         | File-based todo tracking system                |
-| `git-worktree`       | Manage Git worktrees for parallel development  |
+| Skill          | Description                                         |
+| -------------- | --------------------------------------------------- |
+| `commit`       | Create git commits with user approval               |
+| `describe_pr`  | Generate comprehensive PR descriptions              |
+| `compound-docs`| Capture solved problems as categorized documentation|
+| `file-todos`   | File-based todo tracking system                     |
+| `git-worktree` | Manage Git worktrees for parallel development       |
 
-### Image Generation
+### Codebase Exploration
+
+| Skill               | Description                                             |
+| ------------------- | ------------------------------------------------------- |
+| `repoprompt`        | Use RepoPrompt CLI for codebase exploration             |
+| `rp-explorer`       | Token-efficient codebase exploration using RepoPrompt   |
+
+### Browser & Image
 
 | Skill             | Description                                        |
 | ----------------- | -------------------------------------------------- |
+| `agent-browser`   | Browser automation for web testing and interaction |
 | `gemini-imagegen` | Generate and edit images using Google's Gemini API |
+
+### Marketplace
+
+| Skill                   | Description                                              |
+| ----------------------- | -------------------------------------------------------- |
+| `skills-sh-marketplace` | Search, discover, and install skills from skills.sh      |
 
 **gemini-imagegen features:**
 
