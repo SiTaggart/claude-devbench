@@ -27,5 +27,6 @@
       "command": "${HOME}/RepoPrompt/repoprompt_cli",
       "args": []
     }
-  }
+  },
+  "hooks": "hooks/hooks.json"
 }
