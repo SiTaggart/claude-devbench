@@ -7,8 +7,8 @@ AI-powered development tools that get smarter with every use. Make each unit of 
 | Component   | Count |
 | ----------- | ----- |
 | Agents      | 25    |
-| Commands    | 21    |
-| Skills      | 18    |
+| Commands    | 22    |
+| Skills      | 20    |
 | MCP Servers | 1     |
 
 ## Agents
@@ -95,8 +95,8 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 | `/resolve_pr_parallel`   | Resolve PR comments in parallel                              |
 | `/resolve_todo_parallel` | Resolve todos in parallel                                    |
 | `/triage`                | Triage and prioritize issues                                 |
+| `/deslop`                | Remove AI-generated code slop from current branch            |
 | `/playwright-test`       | Run browser tests on PR-affected pages                       |
-| `/xcode-test`            | Build and test iOS apps on simulator                         |
 
 ## Skills
 
@@ -118,6 +118,12 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 | `github-search`            | Search GitHub code, repos, issues, and PRs via CLI |
 | `repo-research-analyst`    | Analyze repository structure and patterns          |
 
+### Orchestration
+
+| Skill                   | Description                                                          |
+| ----------------------- | -------------------------------------------------------------------- |
+| `orchestrating-swarms`  | Multi-agent swarm orchestration with TeammateTool and Task system    |
+
 ### Workflow & Git
 
 | Skill          | Description                                         |
@@ -125,6 +131,7 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 | `commit`       | Create git commits with user approval               |
 | `describe_pr`  | Generate comprehensive PR descriptions              |
 | `compound-docs`| Capture solved problems as categorized documentation|
+| `deslop`       | Remove AI-generated code slop from current branch   |
 | `file-todos`   | File-based todo tracking system                     |
 | `git-worktree` | Manage Git worktrees for parallel development       |
 
