@@ -5,6 +5,30 @@ All notable changes to the devbench plugin will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-02-05
+
+### Added
+
+- **`orchestrating-swarms` skill** - Comprehensive guide to multi-agent swarm orchestration using Claude Code's TeammateTool and Task system. Covers primitives, 13 TeammateTool operations, 6 orchestration patterns (Parallel Specialists, Pipeline, Self-Organizing Swarm, Research + Implementation, Plan Approval, Coordinated Multi-File Refactoring), spawn backends (in-process, tmux, iterm2), error handling, and complete workflow examples. Ported from compound-engineering plugin v2.30.0.
+
+### Changed
+
+- **`/workflows:work` command** - Cherry-picked improvements from compound-engineering:
+  - Smart branch detection: detects current branch vs default branch, offers appropriate choices
+  - Incremental commits: commit after each logical unit with heuristic table for when to commit
+  - Plan checkbox tracking: marks `[ ]` -> `[x]` in plan file as tasks complete
+  - Generic test commands: replaced hardcoded `bin/rails test` with project-agnostic examples
+  - Phase 4 (Ship It): added PR creation workflow with `gh` CLI
+  - Swarm Mode section: optional parallel execution with TeammateTool for complex plans
+
+---
+
+## [1.1.4] - 2026-01-26
+
+### Added
+
+- **Main branch protection hook** - PreToolUse hook that prevents Claude from committing directly to `main` or `master` branches. Blocks `git commit`, `git merge`, `git rebase`, and `git cherry-pick` operations with guidance to create a feature branch first.
+
 ## [1.1.3] - 2026-01-22
 
 ### Fixed
